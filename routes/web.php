@@ -21,3 +21,6 @@ Route::get('datos', function () {
 });
 Route::get('/datos', 'datosController@mostrar');
 Route::post('/datos', 'datosController@store')->name('datos.store');
+
+Route::get('/estudiantes','ControllerEstudiantes@mostrar');
+Route::post('/estudiantes','ControllerEstudiantes@store')->name('estudiantes.store');
