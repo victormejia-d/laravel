@@ -24,3 +24,5 @@ Route::post('/datos', 'datosController@store')->name('datos.store');
 
 Route::get('/estudiantes','ControllerEstudiantes@mostrar');
 Route::post('/estudiantes','ControllerEstudiantes@store')->name('estudiantes.store');
+
+Route::resource('/Lista',ListaController::class);
