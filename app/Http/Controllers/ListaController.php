@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\estudiantes;
+use Illuminate\Support\Facades\DB;
 
 class ListaController extends Controller
 {
@@ -12,10 +13,12 @@ class ListaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $estudiante= estudiantes::all();
-        return view ('VistaEstudiantes', compact('estudiante'));
+        $texto=trim($request->get ('texto'));
+        $estudiante=DB::table ('estudiantes')->select('Matricula','Nombre','Direccion')
+        ->where ('matricula','like',$texto)->paginate(10);
+        return view ('VistaEstudiantes', compact('estudiante',$texto));
     }
 
     /**

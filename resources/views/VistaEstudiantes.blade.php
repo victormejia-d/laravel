@@ -18,6 +18,20 @@
   <div class="container">
     <div class="row justify-content-center">
       <h4 style="margin-top: 30px">Lista de estudiantes</h4>
+
+      <div class="col-xl-12">
+        <form action="{{route('Lista.index')}}" method= "get">
+          <div class="form row">
+            <div class="col sm-4">
+              <input type="text" class="form-control" name="texto">
+            </div>
+            <div class="col auto">
+              <input type="submit" class="btm btn-primary" value="Buscar">
+            </div>
+          </div>
+        </form>
+      </div-class-col>
+
       <div class="col-xl-12">
         <div class="table-responsive">
           
