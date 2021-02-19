@@ -16,8 +16,12 @@ class ListaController extends Controller
     public function index(Request $request)
     {
         $texto=trim($request->get ('texto'));
-        $estudiante=DB::table ('estudiantes')->select('Matricula','Nombre','Direccion')
-        ->where ('matricula','like',$texto)->paginate(10);
+        $estudiante=DB::table ('estudiantes')
+            ->select('Matricula','Nombre','Direccion')
+            ->where ('matricula','like', "%$texto%")
+            ->orWhere ('nombre','like', "%$texto%")
+            ->orWhere ('direccion','like', "%$texto%")
+            ->paginate(10);
         return view ('VistaEstudiantes', compact('estudiante',$texto));
     }
 
