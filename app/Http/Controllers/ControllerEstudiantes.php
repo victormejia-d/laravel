@@ -15,7 +15,7 @@ class ControllerEstudiantes extends Controller
 
     public function store(Request $request)
     {
-        $estudiantes=new estudiantes();    
+        $estudiantes=new estudiantes();
         $estudiantes->Matricula=$request->Matricula;
         $estudiantes->Nombre=$request->Nombre;
         $estudiantes->Direccion=$request->Direccion;

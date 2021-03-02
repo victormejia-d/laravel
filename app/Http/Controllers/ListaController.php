@@ -17,7 +17,7 @@ class ListaController extends Controller
     {
         $texto=trim($request->get ('texto'));
         $estudiante=DB::table ('estudiantes')
-            ->select('Matricula','Nombre','Direccion')
+            ->select('Matricula','Nombre','Direccion', 'id')
             ->where ('matricula','like', "%$texto%")
             ->orWhere ('nombre','like', "%$texto%")
             ->orWhere ('direccion','like', "%$texto%")
@@ -88,6 +88,9 @@ class ListaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $estudiante= estudiantes::find($id);
+        //dd($estudiante);
+        $estudiante->delete($id);
+        return redirect()->route('Lista.index');
     }
 }

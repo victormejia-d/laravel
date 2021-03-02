@@ -51,17 +51,22 @@
                 <td>{{$estudiantes->Matricula}}</td>
                 <td>{{$estudiantes->Nombre}}</td>
                 <td>{{$estudiantes->Direccion}}</td>
-                <td>
-                  <input 
-                    type="submit" 
-                    value="Editar" 
+                <td class="row">
+                  <button
                     class="btn btn-warning"
-                  >
-                  <input 
-                    type="submit" 
-                    value="Eliminar" 
-                    class="btn btn-danger"
-                  >
+                    type="submit"
+                    style="margin-right: 5px"
+                  >Editar</button>
+
+                  <form method="POST" action="{{ url("Lista/{$estudiantes->id}") }}">
+                    @csrf
+                    @method('DELETE')
+                    <button
+                      class="btn btn-danger"
+                      type="submit"
+                      onclick="return confirm ('¿Deseas Borrar el alumno {{$estudiantes->Matricula}}?');"
+                    >Eliminar</button>
+                  </form>
                 </td>
               </tr>
               @endforeach
@@ -69,7 +74,7 @@
           </table>
         </div>
       </div-class-col>
-    </div class>
+    </div>
   </div>
 </body>
 </html>
