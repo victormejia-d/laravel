@@ -28,3 +28,6 @@ Route::post('/estudiantes','ControllerEstudiantes@store')->name('estudiantes.sto
 Route::resource('/Lista',ListaController::class);
 
 Route::delete('Lista/{matricula}', 'ListaController@destroy')->name('Lista.destroy');
+
+Route::get('Lista/{estudiante}/edit', 'ListaController@edit')->name('Lista.edit');
+Route::patch('Lista/{estudiante}/edit', 'ListaController@update')->name('Lista.update');

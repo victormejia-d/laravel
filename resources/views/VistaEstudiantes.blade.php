@@ -52,12 +52,11 @@
                 <td>{{$estudiantes->Nombre}}</td>
                 <td>{{$estudiantes->Direccion}}</td>
                 <td class="row">
-                  <button
+                  <a
+                    href="{{ route ('Lista.edit',$estudiantes->id) }}"
                     class="btn btn-warning"
-                    type="submit"
                     style="margin-right: 5px"
-                  >Editar</button>
-
+                  >Editar</a>
                   <form method="POST" action="{{ url("Lista/{$estudiantes->id}") }}">
                     @csrf
                     @method('DELETE')
