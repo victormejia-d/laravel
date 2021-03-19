@@ -22,7 +22,7 @@ class ListaController extends Controller
             ->orWhere ('nombre','like', "%$texto%")
             ->orWhere ('direccion','like', "%$texto%")
             ->paginate(10);
-        return view ('VistaEstudiantes', compact('estudiante',$texto));
+        return view ('VistaEstudiantes', compact('estudiante'));
     }
 
     /**
