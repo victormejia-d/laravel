@@ -99,4 +99,10 @@ class ListaController extends Controller
         $estudiante->delete($id);
         return redirect()->route('Lista.index');
     }
+
+    public function getAll(){
+        $estudiante = estudiantes::all();
+        return view ('grafica', compact('estudiante'));
+    }
+
 }

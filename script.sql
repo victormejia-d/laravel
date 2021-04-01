@@ -53,3 +53,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2021-03-19  3:01:54
+
+ALTER TABLE estudiantes
+ADD COLUMN sexo char DEFAULT NULL
