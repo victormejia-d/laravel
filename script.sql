@@ -55,4 +55,7 @@ UNLOCK TABLES;
 -- Dump completed on 2021-03-19  3:01:54
 
 ALTER TABLE estudiantes
-ADD COLUMN sexo char DEFAULT NULL
+ADD COLUMN sexo char DEFAULT NULL;
+
+ALTER TABLE estudiantes
+ADD COLUMN calificacion int DEFAULT NULL;

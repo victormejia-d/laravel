@@ -105,4 +105,9 @@ class ListaController extends Controller
         return view ('grafica', compact('estudiante'));
     }
 
+    public function getCalificaciones(){
+        $estudiante = estudiantes::all();
+        return view ('graficaCalificaciones', compact('estudiante'));
+    }
+
 }

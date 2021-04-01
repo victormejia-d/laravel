@@ -32,4 +32,5 @@ Route::delete('Lista/{matricula}', 'ListaController@destroy')->name('Lista.destr
 Route::get('Lista/{estudiante}/edit', 'ListaController@edit')->name('Lista.edit');
 Route::patch('Lista/{estudiante}/edit', 'ListaController@update')->name('Lista.update');
 
-Route::get('grafica', 'ListaController@getAll');
+Route::get('grafica', 'ListaController@getAll')->name('Grafica.sexo');
+Route::get('graficaCalificaciones', 'ListaController@getCalificaciones')->name('Grafica.calificaciones');

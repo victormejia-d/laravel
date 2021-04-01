@@ -27,6 +27,16 @@
             </div>
             <div class="col auto">
               <input type="submit" class="btm btn-primary" value="Buscar">
+              <a
+                href="{{ route ('Grafica.sexo') }}"
+                class="btn btn-secondary"
+                style="margin-left: 100px"
+              >Grafica por sexo</a>
+              <a
+                href="{{ route ('Grafica.calificaciones') }}"
+                class="btn btn-secondary"
+                style="margin-right: 5px"
+              >Grafica de calif.</a>
             </div>
           </div>
         </form>
