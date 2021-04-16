@@ -32,11 +32,18 @@
                 class="btn btn-secondary"
                 style="margin-left: 100px"
               >Grafica por sexo</a>
+
               <a
                 href="{{ route ('Grafica.calificaciones') }}"
                 class="btn btn-secondary"
                 style="margin-right: 5px"
               >Grafica de calif.</a>
+
+              <a
+                href="{{route('descargaPDF')}}"
+                class="btn btn-secondary"
+                style="margin-right: 5px"
+              >PDF</a>
             </div>
           </div>
         </form>

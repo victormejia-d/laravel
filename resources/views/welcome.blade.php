@@ -80,8 +80,10 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title m-b-md" onclick="">
+                    <a href="{{ url('/Lista') }}">
+                        Laravel
+                    </a>
                 </div>
 
                 <div class="links">

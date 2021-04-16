@@ -34,3 +34,5 @@ Route::patch('Lista/{estudiante}/edit', 'ListaController@update')->name('Lista.u
 
 Route::get('grafica', 'ListaController@getAll')->name('Grafica.sexo');
 Route::get('graficaCalificaciones', 'ListaController@getCalificaciones')->name('Grafica.calificaciones');
+
+Route::get('pdf', 'PDFController@PDF')->name('descargaPDF');
