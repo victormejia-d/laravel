@@ -31,7 +31,7 @@
                 href="{{ route ('Grafica.sexo') }}"
                 class="btn btn-secondary"
                 style="margin-left: 100px"
-              >Grafica por sexo</a>
+              >Grafica</a>
 
               <a
                 href="{{ route ('Grafica.calificaciones') }}"

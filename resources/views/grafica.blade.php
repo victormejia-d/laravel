@@ -17,10 +17,10 @@
 
     <body>
         <div class="container pt-4">
-            <h4 class="font-weight-normal"><b>Gráfica por sexo</b></h4>
+            <h4 class="font-weight-normal"><b>Gráfica</b></h4>
             <hr>
             <div>
-                <canvas id="graph" class="w-100" height="400px"></canvas>
+                <canvas id="buyers" width="600" height="300"></canvas>
             </div>
         </div>
     </body>
@@ -30,59 +30,33 @@
 <script 
     data-require="chart.js@*" 
     data-semver="1.0.2"
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"
 ></script>
 
 <script>
-    var sexo = []
-    @foreach($estudiante as $e)
-    sexo.push('{{$e->sexo}}')
-    @endforeach();
-
-    var h = 0, m = 0;
-    sexo.forEach(element => {
-        if (element == "M") {
-            m++
-        } else {
-            h++
+var buyerData = {
+    labels : ["January","February","March","April","May","June"],
+    datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            data : [203,156,99,251,305,247]
         }
-    });
-
-
-    var data = {
-        datasets: [{
-            data: [
-                h, m
-            ],
-            backgroundColor: [
-                '#85C1E9', '#FFA07A'
-            ],
-            label: 'Dataset 1'
-        }],
-        labels: [
-            'Hombre',
-            'Mujer',
-        ]
-    }
-
-    var ctx = document.getElementById('graph').getContext('2d');
-    var options = {
-        animation: true,
-        animationSteps: 100,
-        animationEasing: "easeOutQuart",
-        scaleFontSize: 16,
-        responsive: true,
-        showTooltip: true,
-        tooltipTemplate: "<%if (label){%>< <%}%><%= value %>",
-        scaleShowGridLines: false,
-        bezierCurve: false,
-        pointDotRadius: 5,
-    }
-
-    var myLineChart = new Chart(ctx, {
-        type: 'pie',
-        data: data,
-        options: options
-    });
-
+    ]
+}
+var buyers = document.getElementById('buyers').getContext('2d');
+new Chart(buyers).Line(buyerData, {
+    animation: true,
+    animationSteps: 100,
+    animationEasing: "easeOutQuart",
+    scaleFontSize: 16,
+    responsive: true,
+    showTooltip: true,
+    tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+    scaleShowGridLines : false,
+    bezierCurve : false,
+    pointDotRadius : 5,
+});
 </script>
