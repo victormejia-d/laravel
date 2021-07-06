@@ -36,3 +36,7 @@ Route::get('grafica', 'ListaController@getAll')->name('Grafica.sexo');
 Route::get('graficaCalificaciones', 'ListaController@getCalificaciones')->name('Grafica.calificaciones');
 
 Route::get('pdf', 'PDFController@PDF')->name('descargaPDF');
+
+Route::get('videoYoutube', function () {
+    return view('videoYoutube');
+});
