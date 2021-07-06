@@ -40,3 +40,7 @@ Route::get('pdf', 'PDFController@PDF')->name('descargaPDF');
 Route::get('videoYoutube', function () {
     return view('videoYoutube');
 });
+
+Route::get('videoFacebook', function () {
+    return view('videoFacebook');
+});
