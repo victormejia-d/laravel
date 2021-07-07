@@ -6,17 +6,12 @@
         type="image/icon type"
         href="https://images.vexels.com/media/users/3/137425/isolated/lists/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo.png"
     >
-    <link 
-        rel="stylesheet" 
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
-        crossorigin="anonymous"
-    >
 </head>
 
 <html>
     <body>
         <div class="row justify-content-center">
+            <div>Mundo Hipocrita - Producido por Green A - Almacenado en YouTube</div>
             <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
             <div id="player"/>
         </div>

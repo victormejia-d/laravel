@@ -44,3 +44,7 @@ Route::get('videoYoutube', function () {
 Route::get('videoFacebook', function () {
     return view('videoFacebook');
 });
+
+Route::get('fuentes', function () {
+    return view('fuentes');
+});
